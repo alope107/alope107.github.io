@@ -9,8 +9,8 @@ var Engine = Matter.Engine,
     Composites = Matter.Composites,
     MouseConstraint = Matter.MouseConstraint;
 
-var can_height = 337;
-var can_width = 212;
+var can_height = 337*2;
+var can_width = 212*2;
 
 //var can_height = 600;
 //var can_width = 800;
