@@ -105,6 +105,8 @@ renderOptions.background = 'background.png';
 renderOptions.showAngleIndicator = false;
 renderOptions.wireframes = false;
 
+var slow_ratio = 180;
+
 Events.on(engine, 'tick', function(event) {
   countElement.textContent = count;
   var selected = mouseConstraint.body;
@@ -117,19 +119,20 @@ Events.on(engine, 'tick', function(event) {
 	var y_pos = ball.position.y;
 	var thresh = .6 * can_height;
 	if(x_pos > targ_x1 && x_pos < targ_x2 && y_pos > targ_y1 && y_pos < targ_y2 && ball.tapped) {
-		//var to_remove = ball.id;
 		var velocity = ball.velocity;
 		Composite.remove(stack, ball);
 		var obj = Bodies.circle(x_pos+can_width+buffer_size, y_pos, radius, ballOpts);
-		//console.log(obj);
+		obj.force = {x:velocity.x / slow_ratio,y: velocity.y/slow_ratio};
+		console.log(obj);
 		Composite.add(stack, obj);
 		count +=1;
 	}
 	if(x_pos > targ_x1 + can_width + buffer_size && x_pos < targ_x2 + can_width + buffer_size && y_pos > targ_y1 && y_pos < targ_y2 && ball.tapped) {
-		//var to_remove = ball.id;
+		var velocity = ball.velocity;
 		Composite.remove(stack, ball);
 		var obj = Bodies.circle(x_pos-can_width-buffer_size, y_pos, radius, ballOpts);
-		//console.log(obj);
+		obj.force = {x:velocity.x / slow_ratio,y: velocity.y/slow_ratio};
+		console.log(obj);
 		Composite.add(stack, obj);
 		count -=1;
 	}
