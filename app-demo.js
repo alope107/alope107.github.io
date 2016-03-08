@@ -1,6 +1,9 @@
 var start = function() {// Matter.js - http://brm.io/matter-js/
 
-var countElement = document.getElementsByClassName("fCount")[0];
+var countElement = document.getElementsByClassName("fCountL")[0];
+var countElementR = document.getElementsByClassName("fCountR")[0];
+var verbL = document.getElementsByClassName("verbL")[0];
+var verbR = document.getElementsByClassName("verbR")[0];
 // Matter module aliases
 var Engine = Matter.Engine,
     World = Matter.World,
@@ -22,6 +25,7 @@ var targ_x2 =  targ_x1 + 2 * targ_dim;
 var targ_y2 =  targ_y1 + 2 * targ_dim;
 
 var count = 0;
+var countR = 0;
 var buffer_size = 60;
 
 // create a Matter.js engine
@@ -108,7 +112,19 @@ renderOptions.wireframes = false;
 var slow_ratio = 180;
 
 Events.on(engine, 'tick', function(event) {
-  countElement.textContent = count;
+  countElement.textContent = Math.abs(count);
+  countElementR.textContent = Math.abs(countR);
+  
+  if (count < 0) {
+	verbL.textContent = "recieved";
+	verbR.textContent = "given";
+	
+  }
+  else {
+	verbL.textContent = "given";
+	verbR.textContent = "recieved";
+  }
+  
   var selected = mouseConstraint.body;
   if (selected) {
 	selected.tapped = true;
@@ -126,6 +142,7 @@ Events.on(engine, 'tick', function(event) {
 		console.log(obj);
 		Composite.add(stack, obj);
 		count +=1;
+		countR -=1;
 	}
 	if(x_pos > targ_x1 + can_width + buffer_size && x_pos < targ_x2 + can_width + buffer_size && y_pos > targ_y1 && y_pos < targ_y2 && ball.tapped) {
 		var velocity = ball.velocity;
@@ -135,6 +152,7 @@ Events.on(engine, 'tick', function(event) {
 		console.log(obj);
 		Composite.add(stack, obj);
 		count -=1;
+		countR +=1;
 	}
   }
   });
