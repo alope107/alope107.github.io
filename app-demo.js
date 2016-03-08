@@ -1,5 +1,6 @@
 var start = function() {// Matter.js - http://brm.io/matter-js/
 
+var countElement = document.getElementsByClassName("fCount")[0];
 // Matter module aliases
 var Engine = Matter.Engine,
     World = Matter.World,
@@ -7,10 +8,13 @@ var Engine = Matter.Engine,
     Bodies = Matter.Bodies,
     Common = Matter.Common,
     Composites = Matter.Composites,
-    MouseConstraint = Matter.MouseConstraint;
+    MouseConstraint = Matter.MouseConstraint,
+	Events = Matter.Events;
 
-var can_height = 337*2;
-var can_width = 212*2;
+var can_width = 195*2;
+var can_height = 325*2;
+var count = 55;
+
 
 //var can_height = 600;
 //var can_width = 800;
@@ -65,10 +69,16 @@ var stack = Composites.stack(20, 20, 6, 3, 0, 0, function(x, y) {
 World.add(engine.world, stack);
 
 var renderOptions = engine.render.options;
-renderOptions.background = 'http://brm.io/matter-js-demo-master/img/wall-bg.jpg';
+renderOptions.background = 'background.png';
 renderOptions.showAngleIndicator = false;
 renderOptions.wireframes = false;
 
+Events.on(engine, 'tick', function(event) {
+  countElement.textContent = count;
+  count +=1;
+  });
+  
+  
 // run the engine
 Engine.run(engine);
 }
