@@ -122,7 +122,7 @@ Events.on(engine, 'tick', function(event) {
   }
   else {
 	verbL.textContent = "given";
-	verbR.textContent = "recieved";
+	verbR.textContent = "received";
   }
   
   var selected = mouseConstraint.body;
