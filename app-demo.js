@@ -18,7 +18,7 @@ var Engine = Matter.Engine,
 var can_width = 317;
 var can_height = 522;
 
-var targ_dim = can_height / 15;
+var targ_dim = can_height / 12;
 var targ_x1 = can_width/2 - targ_dim;
 var targ_y1 = can_height/5 - targ_dim;
 var targ_x2 =  targ_x1 + 2 * targ_dim;
