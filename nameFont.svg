@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:bx="https://boxy-svg.com">
+  <title>Auberon López</title>
+  <text style="font-family: Oranienbaum; font-size: 110px; letter-spacing: 2px; white-space: pre;" x="89.583" y="114.522">uberon</text>
+  <text style="font-family: Oranienbaum; font-size: 110px; letter-spacing: 4px; white-space: pre;" x="140.903" y="225.357">ópez</text>
+  <path d="M 124.119 232.847 L 369.51 233.074 C 369.51 227.795 370.625 222.892 372.86 218.368 C 375.095 213.843 377.919 209.948 381.335 206.68 L 382.248 206.453 C 381.983 208.088 381.787 209.785 381.656 211.543 C 381.525 213.052 381.428 214.686 381.369 216.445 C 381.297 218.205 381.261 219.901 381.261 221.535 C 381.261 223.925 381.297 226.025 381.369 227.842 C 381.428 229.671 381.525 231.278 381.656 232.658 C 381.787 234.167 381.983 240.503 382.248 241.633 L 102.244 241.633 L 102.244 239.749 L 114.071 231.904 L 114.071 131.674 L 102.244 127.436 L 102.244 125.55 L 135.944 125.55 L 135.944 127.436 L 124.119 131.674 L 124.119 232.847 Z" fill="black" style="stroke-width: 1;"/>
+  <defs>
+    <style bx:fonts="Oranienbaum">@import url(https://fonts.googleapis.com/css2?family=Oranienbaum%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <text style="font-family: Oranienbaum; font-size: 186px; letter-spacing: 2px; white-space: pre;" x="4.219" y="145.158">A</text>
+</svg>
