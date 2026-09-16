@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /deathray # Trust me, you don't want to crawl this
